@@ -1,0 +1,51 @@
+name: App Store Status Tracker Trigger
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths-ignore:
+      - "status.json"
+
+permissions:
+  contents: write
+
+jobs:
+  appstore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Create Dotenv file
+        run: echo "${{ secrets.DOT_ENV }}" > .env
+
+      - name: Create apps.json
+        run: echo '${{ secrets.APPS_JSON }}' > apps.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run App Store Status Tracker
+        run: npm run prod
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add status.json
+          git commit -m ":card_file_box: Update processed Apps status" || exit 0
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

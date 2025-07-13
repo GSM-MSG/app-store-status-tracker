@@ -3,6 +3,6 @@
     "state": "PREPARE_FOR_SUBMISSION",
     "createdDate": "2025-06-14T22:28:43-07:00",
     "versionString": "1.0",
-    "releaseType": "AFTER_APPROVAL"
+    "releaseType": "MANUAL"
   }
 }

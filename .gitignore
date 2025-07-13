@@ -5,7 +5,6 @@ node_modules
 .eslintcache
 build
 yarn.lock
-package-lock.json
 .vscode
 /dist
 build_version.json

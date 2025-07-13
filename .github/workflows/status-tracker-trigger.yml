@@ -29,7 +29,7 @@ jobs:
           cache: "npm"
 
       - name: Create Dotenv file
-        run: echo "${{ secrets.DOT_ENV }}" > .env
+        run: echo '${{ secrets.DOT_ENV }}' > .env
 
       - name: Create apps.json
         run: echo '${{ secrets.APPS_JSON }}' > apps.json

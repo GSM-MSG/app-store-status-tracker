@@ -1,6 +1,6 @@
 {
   "6747303987": {
-    "state": "WAITING_FOR_REVIEW",
+    "state": "IN_REVIEW",
     "createdDate": "2025-06-14T22:28:43-07:00",
     "versionString": "1.0",
     "releaseType": "MANUAL"

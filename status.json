@@ -1,8 +1,8 @@
 {
   "6747303987": {
-    "state": "READY_FOR_DISTRIBUTION",
-    "createdDate": "2025-06-14T22:28:43-07:00",
-    "versionString": "1.0",
+    "state": "WAITING_FOR_REVIEW",
+    "createdDate": "2025-07-23T08:22:46-07:00",
+    "versionString": "2.0",
     "releaseType": "MANUAL"
   }
 }

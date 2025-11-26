@@ -6,7 +6,7 @@
     "releaseType": "AFTER_APPROVAL"
   },
   "6753810442": {
-    "state": "WAITING_FOR_REVIEW",
+    "state": "IN_REVIEW",
     "createdDate": "2025-10-09T08:09:06-07:00",
     "versionString": "1.0",
     "releaseType": "AFTER_APPROVAL"
